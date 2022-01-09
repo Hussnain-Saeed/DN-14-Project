@@ -1,0 +1,42 @@
+﻿@using ShoppingApplication.WebUI.Models
+@model List<Product>
+ 
+@{ 
+    ViewBag.Title = "Products";
+}
+@* CRUD - Create , Retrive (Read), Update, Delete *@
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Added On</th>
+                <th>Seller</th>
+                <th>Status</th>
+                <th>SubCategory</th>
+                <th>Category</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Title</td>
+                <td>@item.Description</td>
+                <td>@item.Price</td>
+                <td>@item.AddedOn</td>
+                <td>@item.Seller.Name</td>
+                <td>@item.ProductStatus.Name</td>
+                <td>@item.SubCategory.Name</td>
+                <td>@item.SubCategory.Category.Name</td>
+                <td><a href="/Product/Delete/@item.Id">Delete</a> | <a href="/Product/View/@item.Id">View</a></td>
+            </tr>
+            }
+        </tbody>
+    </table>
+
+
