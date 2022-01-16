@@ -1,0 +1,15 @@
+﻿@using ShoppingApplication.WebUI.Models
+@model User
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+<form action="/Users/Edit" method="post">
+    <input type="hidden" name="Id" value="@Model.Id" />
+    <input type="text" name="Name" value="@Model.Name" required placeholder="Name"/>
+    <input type="email" name="Email" value="@Model.Email" required placeholder="Email"/>
+    <input type="password" name="Password" value="@Model.Password" required placeholder="Password"/>
+    <input type="tel" name="PhoneNumber" value="@Model.PhoneNumber" required placeholder="PhoneNumber"/>
+    <button>Submit</button>
+</form>
